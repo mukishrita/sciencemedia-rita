@@ -1,0 +1,21 @@
+===Database sciencemedia
+
+== Table structure for table login
+
+|------
+|Column|Type|Null|Default
+|------
+|username|varchar(40)|No|
+|password|varchar(40)|No|
+== Dumping data for table login
+
+== Table structure for table members
+
+|------
+|Column|Type|Null|Default
+|------
+|firstname|varchar(40)|No|
+|lastname|varchar(40)|No|
+|potifolio|varchar(40)|No|
+== Dumping data for table members
+
