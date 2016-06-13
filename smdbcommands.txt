@@ -1,0 +1,283 @@
+| phpmyadmin         |
+| sciencemedia       |
+| test               |
++--------------------+
+6 rows in set (0.02 sec)
+
+MariaDB [(none)]> drop sciencemedia;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sciencemedia' at line 1
+MariaDB [(none)]> drop database sciencemedia;
+Query OK, 2 rows affected (0.14 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+5 rows in set (0.00 sec)
+
+MariaDB [(none)]> create database sciencemedia;
+Query OK, 1 row affected (0.01 sec)
+
+MariaDB [(none)]> use sciencemedia
+Database changed
+MariaDB [sciencemedia]> show tables;
+Empty set (0.00 sec)
+
+MariaDB [sciencemedia]> create table login(username varchar(35) unsigned auto_increment primary key not null,password varchar(25) not null);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'unsigned auto_increment primary key not null,password varchar(25) not null)' at line 1
+MariaDB [sciencemedia]> create table login(username varchar(35) unsigned auto_increment primary key not null,password varchar(25) not null);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'unsigned auto_increment primary key not null,password varchar(25) not null)' at line 1
+MariaDB [sciencemedia]> create table login(
+    -> username varchar(35) not null,
+    -> password varchar(35) not nullBye
+Ctrl-C -- exit!
+
+C:\xampp\mysql\bin>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.1.13-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases
+    -> Ctrl-C -- exit!
+Bye
+
+C:\xampp\mysql\bin>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 9
+Server version: 10.1.13-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| sciencemedia       |
+| test               |
++--------------------+
+6 rows in set (0.00 sec)
+
+MariaDB [(none)]> use sciencemedia;
+Database changed
+MariaDB [sciencemedia]> show tables;
+Empty set (0.00 sec)
+
+MariaDB [sciencemedia]> create table login(
+    -> username varchar(45) not null auto_increament,
+    -> password varchar(40) not null,
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '
+password varchar(40) not null,
+)' at line 2
+MariaDB [sciencemedia]> create table login(
+    -> username VARCHAR(45) NOT NULL AUTO_INCREMENT PRIMARY KEYY,
+    -> Bye
+Ctrl-C -- exit!
+
+C:\xampp\mysql\bin>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 10
+Server version: 10.1.13-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| sciencemedia       |
+| test               |
++--------------------+
+6 rows in set (0.00 sec)
+
+MariaDB [(none)]> USE SCIENCEMEDIA
+Database changed
+MariaDB [SCIENCEMEDIA]> create table login(
+    -> username varchar(45) auto_increment primary key not null,
+    -> password varchar(45) not null
+    -> );
+ERROR 1063 (42000): Incorrect column specifier for column 'username'
+MariaDB [SCIENCEMEDIA]> create table login(
+    -> username varchar(45) not null,
+    -> password varchar(45) not null
+    -> );
+Query OK, 0 rows affected (0.08 sec)
+
+MariaDB [SCIENCEMEDIA]> create table members(
+    -> firstname varchar(450 not null,
+    -> Bye
+Ctrl-C -- exit!
+
+C:\xampp\mysql\bin>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 11
+Server version: 10.1.13-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use table sciencemedia;
+ERROR 1049 (42000): Unknown database 'table'
+MariaDB [(none)]> use database sciencemedia;
+ERROR 1049 (42000): Unknown database 'database'
+MariaDB [(none)]> );show databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| sciencemedia       |
+| test               |
++--------------------+
+6 rows in set (0.00 sec)
+
+MariaDB [(none)]> use sciencemedia;
+Database changed
+MariaDB [sciencemedia]> show tables;
++------------------------+
+| Tables_in_sciencemedia |
++------------------------+
+| login                  |
++------------------------+
+1 row in set (0.00 sec)
+
+MariaDB [sciencemedia]> create table members(
+    -> firstname varchar(45) not null,
+    -> lastname varchar(45) not null,
+    -> potifolio
+    -> Bye
+Ctrl-C -- exit!
+
+C:\xampp\mysql\bin>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 12
+Server version: 10.1.13-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use sciencemedia;
+Database changed
+MariaDB [sciencemedia]> create table members(
+    -> firstname varchar(45) not null,
+    -> lastname varchar(45) not null,
+    -> potifolio varchar(200) auto_increment bot null
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'null
+)' at line 4
+MariaDB [sciencemedia]> create table members(
+    -> firstname varchar(45) not null,
+    -> lastname varchar(45) not null,
+    -> potifolio varchar (500) auto_increment not null
+    -> );
+ERROR 1063 (42000): Incorrect column specifier for column 'potifolio'
+MariaDB [sciencemedia]> create table members(
+    -> firstname varchar(45) not null,
+    -> lastname varchar(45) not null,
+    -> potifolio varchar(500) not null
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+MariaDB [sciencemedia]> show tables
+    ->
+    -> show tables;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'show tables' at line 3
+MariaDB [sciencemedia]> show tables;
++------------------------+
+| Tables_in_sciencemedia |
++------------------------+
+| login                  |
+| members                |
++------------------------+
+2 rows in set (0.00 sec)
+
+MariaDB [sciencemedia]> exit;
+Bye
+
+C:\xampp\mysql\bin>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 13
+Server version: 10.1.13-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> mysqldump -u root -p sciencemedia >assgtfile.sql
+    ->
+    ->
+    -> m
+    ->
+    ->
+    -> sfdg;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'mysqldump -u root -p sciencemedia >assgtfile.sql
+
+
+m
+
+
+sfdg' at line 1
+MariaDB [(none)]> help;
+
+General information about MariaDB can be found at
+http://mariadb.org
+
+List of all MySQL commands:
+Note that all text commands must be first on line and end with ';'
+?         (\?) Synonym for `help'.
+clear     (\c) Clear the current input statement.
+connect   (\r) Reconnect to the server. Optional arguments are db and host.
+delimiter (\d) Set statement delimiter.
+ego       (\G) Send command to mysql server, display result vertically.
+exit      (\q) Exit mysql. Same as quit.
+go        (\g) Send command to mysql server.
+help      (\h) Display this help.
+notee     (\t) Don't write into outfile.
+print     (\p) Print current command.
+prompt    (\R) Change your mysql prompt.
+quit      (\q) Quit mysql.
+rehash    (\#) Rebuild completion hash.
+source    (\.) Execute an SQL script file. Takes a file name as an argument.
+status    (\s) Get status information from the server.
+tee       (\T) Set outfile [to_outfile]. Append everything into given outfile.
+use       (\u) Use another database. Takes database name as argument.
+charset   (\C) Switch to another charset. Might be needed for processing binlog with multi-byte charsets.
+warnings  (\W) Show warnings after every statement.
+nowarning (\w) Don't show warnings after every statement.
+
+For server side help, type 'help contents'
+
+MariaDB [(none)]>
