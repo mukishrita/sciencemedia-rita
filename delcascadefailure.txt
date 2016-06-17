@@ -1,0 +1,188 @@
+Microsoft Windows [Version 10.0.10586]
+(c) 2016 Microsoft Corporation. All rights reserved.
+
+C:\Users\Ritah>cd C:\Users\Ritah\Documents\sciencemedia
+
+C:\Users\Ritah\Documents\sciencemedia>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 2
+Server version: 10.1.13-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| sciencemedia       |
+| test               |
++--------------------+
+6 rows in set (0.03 sec)
+
+MariaDB [(none)]> use sciencemedia;
+Database changed
+MariaDB [sciencemedia]> show tables;
++------------------------+
+| Tables_in_sciencemedia |
++------------------------+
+| login                  |
+| members                |
++------------------------+
+2 rows in set (0.00 sec)
+
+MariaDB [sciencemedia]> alter table login drop index loginID;
+ERROR 1091 (42000): Can't DROP 'loginID'; check that column/key exists
+MariaDB [sciencemedia]> alter table login drop key loginID;
+ERROR 1091 (42000): Can't DROP 'loginID'; check that column/key exists
+MariaDB [sciencemedia]> show login;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'login' at line 1
+MariaDB [sciencemedia]> use login;
+ERROR 1049 (42000): Unknown database 'login'
+MariaDB [sciencemedia]> show index;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [sciencemedia]> alter table login drop loginID;
+ERROR 1829 (HY000): Cannot drop column 'loginID': needed in a foreign key constraint 'members_ibfk_1' of table 'sciencemedia.members'
+MariaDB [sciencemedia]> alter table members drop loginID;
+ERROR 1553 (HY000): Cannot drop index 'loginID': needed in a foreign key constraint
+MariaDB [sciencemedia]> alter table members drop foreign key loginID;
+ERROR 1091 (42000): Can't DROP 'loginID'; check that column/key exists
+MariaDB [sciencemedia]> alter table members drop constraint loginID;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'constraint loginID' at line 1
+MariaDB [sciencemedia]> Ctrl-C -- exit!
+Bye
+
+C:\Users\Ritah\Documents\sciencemedia>git
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+The most commonly used git commands are:
+   add        Add file contents to the index
+   bisect     Find by binary search the change that introduced a bug
+   branch     List, create, or delete branches
+   checkout   Checkout a branch or paths to the working tree
+   clone      Clone a repository into a new directory
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   fetch      Download objects and refs from another repository
+   grep       Print lines matching a pattern
+   init       Create an empty Git repository or reinitialize an existing one
+   log        Show commit logs
+   merge      Join two or more development histories together
+   mv         Move or rename a file, a directory, or a symlink
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+   rebase     Forward-port local commits to the updated upstream head
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+   show       Show various types of objects
+   status     Show the working tree status
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+'git help -a' and 'git help -g' lists available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+
+C:\Users\Ritah\Documents\sciencemedia>git add all
+fatal: pathspec 'all' did not match any files
+
+C:\Users\Ritah\Documents\sciencemedia>-h
+'-h' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Ritah\Documents\sciencemedia>git help -g
+The common Git guides are:
+
+   attributes   Defining attributes per path
+   glossary     A Git glossary
+   ignore       Specifies intentionally untracked files to ignore
+   modules      Defining submodule properties
+   revisions    Specifying revisions and ranges for Git
+   tutorial     A tutorial introduction to Git (for version 1.5.1 or newer)
+   workflows    An overview of recommended workflows with Git
+
+'git help -a' and 'git help -g' lists available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+
+C:\Users\Ritah\Documents\sciencemedia>git help <command>
+The syntax of the command is incorrect.
+
+C:\Users\Ritah\Documents\sciencemedia>git help -a
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+available git commands in 'C:\RailsInstaller\Git/libexec/git-core'
+
+  add                 grep                relink
+  add--interactive    gui                 remote
+  am                  gui--askpass        remote-ext
+  annotate            gui--askyesno       remote-fd
+  apply               gui.tcl             remote-ftp
+  archive             hash-object         remote-ftps
+  bisect              help                remote-http
+  bisect--helper      http-backend        remote-https
+  blame               http-fetch          remote-testsvn
+  branch              imap-send           repack
+  bundle              index-pack          replace
+  cat-file            init                repo-config
+  check-attr          init-db             request-pull
+  check-ignore        log                 rerere
+  check-mailmap       ls-files            reset
+  check-ref-format    ls-remote           rev-list
+  checkout            ls-tree             rev-parse
+  checkout-index      mailinfo            revert
+  cherry              mailsplit           rm
+  cherry-pick         merge               send-email
+  citool              merge-base          send-pack
+  clean               merge-file          sh-i18n--envsubst
+  clone               merge-index         shortlog
+  column              merge-octopus       show
+  commit              merge-one-file      show-branch
+  commit-tree         merge-ours          show-index
+  config              merge-recursive     show-ref
+  count-objects       merge-resolve       stage
+  credential          merge-subtree       stash
+  credential-store    merge-tree          status
+  credential-wincred  mergetool           stripspace
+  daemon              mktag               submodule
+  describe            mktree              subtree
+  diff                mv                  svn
+  diff-files          name-rev            symbolic-ref
+  diff-index          notes               tag
+  diff-tree           p4                  tar-tree
+  difftool            pack-objects        unpack-file
+  difftool--helper    pack-redundant      unpack-objects
+  fast-export         pack-refs           update-index
+  fast-import         patch-id            update-ref
+  fetch               peek-remote         update-server-info
+  fetch-pack          prune               upload-archive
+  filter-branch       prune-packed        upload-pack
+  fmt-merge-msg       pull                var
+  for-each-ref        push                verify-pack
+  format-patch        quiltimport         verify-tag
+  fsck                read-tree           web--browse
+  fsck-objects        rebase              whatchanged
+  gc                  receive-pack        write-tree
+  get-tar-commit-id   reflog
+
+'git help -a' and 'git help -g' lists available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+
+C:\Users\Ritah\Documents\sciencemedia>git help <add>
+The syntax of the command is incorrect.
+
+C:\Users\Ritah\Documents\sciencemedia>
